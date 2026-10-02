@@ -1,0 +1,279 @@
+/* ==========================================================================
+   SAMMY K — MASTER OF CEREMONIES & EVENT HOST
+   Modern Standard CSS Design System & Theme Variables
+   ========================================================================== */
+
+:root {
+  /* Surfaces & Backgrounds */
+  --bg-primary: #0a0b0e;
+  --bg-secondary: #111319;
+  --bg-tertiary: #171a24;
+  --bg-card: #141720;
+  --bg-card-hover: #1c202d;
+  --bg-glass: rgba(17, 19, 25, 0.75);
+
+  /* Brand Accents — Champagne Gold & Stage Spotlight */
+  --gold-primary: #e5a93c;
+  --gold-hover: #f5be58;
+  --gold-light: #fde8be;
+  --gold-muted: rgba(229, 169, 60, 0.12);
+  --gold-border: rgba(229, 169, 60, 0.35);
+  --gold-glow: rgba(229, 169, 60, 0.22);
+
+  /* Typography Colors */
+  --text-main: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0a0b0e;
+
+  /* Status Colors */
+  --status-confirmed: #22c55e;
+  --status-pending: #f59e0b;
+  --status-new: #38bdf8;
+  --status-declined: #ef4444;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-active: var(--gold-primary);
+
+  /* Typography Scales */
+  --font-display: 'Syne', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadows & Depth */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 35px rgba(229, 169, 60, 0.25);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  /* Dimensions & Pacing */
+  --max-width: 1240px;
+  --header-height: 80px;
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Box Model */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #252834;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-wrapper {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 60px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-primary) 0%, #d4952c 100%);
+  color: #0a0b0e;
+  box-shadow: 0 4px 18px rgba(229, 169, 60, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--gold-hover) 0%, #e5a93c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(229, 169, 60, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border-color: var(--border-medium);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold-primary);
+  border-color: var(--gold-border);
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold-muted);
+  border-color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-live {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-gold {
+  background: var(--gold-muted);
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-border);
+}
+
+.badge-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  animation: pulse-pip 2s infinite ease-in-out;
+}
+
+@keyframes pulse-pip {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.35); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* Subtle Stage Ambient Glow */
+.stage-ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(229, 169, 60, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
