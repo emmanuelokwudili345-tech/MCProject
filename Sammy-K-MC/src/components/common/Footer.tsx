@@ -14,6 +14,7 @@ export function Footer() {
           <Link to="/about">About</Link>
           <Link to="/events">Events</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
 
         <a href="mailto:oduntandaniel6@gmail.com" className="footer-email">
