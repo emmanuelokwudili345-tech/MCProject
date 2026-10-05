@@ -57,16 +57,6 @@ export interface GalleryItem {
   caption: string;
 }
 
-export interface Testimonial {
-  id: number;
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-  avatar: string;
-  event: string;
-}
-
 export interface FAQItem {
   question: string;
   answer: string;
@@ -80,7 +70,6 @@ export interface CompereProfile {
   languages: string[];
   yearsExperience: string;
   eventsHosted: string;
-  countriesVisited: string;
   clientSatisfaction: string;
   bio: {
     lead: string;
@@ -98,7 +87,5 @@ export interface CompereProfile {
     highlightsSummary: string;
   };
   gallery: GalleryItem[];
-  testimonials: Testimonial[];
   faqs: FAQItem[];
 }
-
