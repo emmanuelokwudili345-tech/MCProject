@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import { BookingProvider } from './context/BookingContext';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { HomePage } from './pages/HomePage';
@@ -23,27 +22,24 @@ function AppShell() {
   };
 
   return (
-    <BookingProvider>
-      <div className="app-layout" style={{ minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
-        <Navbar onBookClick={handleBookClick} />
+    <div className="app-layout">
+      <Navbar onBookClick={handleBookClick} />
 
-        <main>
-          <Routes>
+      <main>
+        <Routes>
             <Route
               path="/"
               element={<HomePage onBookClick={handleBookClick} />}
             />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          </Routes>
-        </main>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        </Routes>
+      </main>
 
-        <Footer />
-
-      </div>
-    </BookingProvider>
+      <Footer />
+    </div>
   );
 }
 

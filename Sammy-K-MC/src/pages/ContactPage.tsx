@@ -16,7 +16,7 @@ const initialFormState = {
 
 export function ContactPage() {
   const location = useLocation();
-  const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() as string | undefined;
+  const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim();
   const [form, setForm] = useState(initialFormState);
   const [submitState, setSubmitState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
@@ -108,7 +108,7 @@ export function ContactPage() {
             </ul>
           </div>
 
-          <form className="form-panel" onSubmit={handleSubmit}>
+          <form className="form-panel" onSubmit={handleSubmit} aria-busy={submitState === 'loading'}>
             <div className="field-row">
               <label>
                 Name
@@ -176,7 +176,7 @@ export function ContactPage() {
             </label>
 
             {feedback && (
-              <p className={`form-status ${submitState}`}>
+              <p className={`form-status ${submitState}`} role="status" aria-live="polite">
                 {feedback}
               </p>
             )}

@@ -17,6 +17,11 @@
   pointer-events: none;
 }
 
+.hero-container {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -133,43 +138,7 @@
   transform: scale(1.02);
 }
 
-.hero-showreel-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: rgba(12, 12, 10, 0.8);
-  border: 1px solid var(--gold-border);
-  color: var(--gold-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: none;
-  transition: all var(--transition-fast);
-}
 
-.hero-showreel-play-btn:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-  background: rgba(199, 154, 73, 0.12);
-  border-color: var(--gold-primary);
-}
-
-.hero-play-label {
-  position: absolute;
-  top: calc(50% + 54px);
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 700;
-  white-space: nowrap;
-}
 
 .hero-floating-badge {
   position: absolute;
@@ -243,7 +212,12 @@
 }
 
 @media (max-width: 990px) {
-  .hero-grid {
+  .hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }

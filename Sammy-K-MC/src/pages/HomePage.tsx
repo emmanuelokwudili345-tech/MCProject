@@ -27,7 +27,7 @@ export const HomePage: FC<HomePageProps> = ({ onBookClick }) => {
             {compereProfile.specialties.map((specialty) => (
               <article key={specialty.id} className="feature-card">
                 <div className="feature-icon-wrap">
-                  <Icon name={specialty.icon as "check"} size={22} color="#e5a93c" />
+                  <Icon name={specialty.icon} size={22} color="#e5a93c" />
                 </div>
                 <h3>{specialty.title}</h3>
                 <p>{specialty.description}</p>
@@ -63,8 +63,8 @@ export const HomePage: FC<HomePageProps> = ({ onBookClick }) => {
                 <span>Stages hosted</span>
               </div>
               <div>
-                <strong>{compereProfile.clientSatisfaction}</strong>
-                <span>Client satisfaction</span>
+                <strong>{compereProfile.languages.length}</strong>
+                <span>Languages spoken</span>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ export const HomePage: FC<HomePageProps> = ({ onBookClick }) => {
           <div className="gallery-grid">
             {compereProfile.gallery.slice(0, 3).map((item) => (
               <article key={item.id} className="gallery-card">
-                <img src={item.image} alt={item.title} />
+                <img src={item.image} alt={item.title} loading="lazy" />
                 <div className="gallery-copy">
                   <span>{item.category}</span>
                   <h3>{item.title}</h3>

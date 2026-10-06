@@ -1,47 +1,9 @@
-export type InquiryStatus = 'new' | 'in_review' | 'confirmed' | 'completed' | 'declined';
-
-export interface Inquiry {
-  id: string;
-  clientName: string;
-  organization?: string;
-  email: string;
-  phone: string;
-  eventType: string;
-  eventDate: string;
-  eventLocation: string;
-  guestCount: string;
-  packageId: string;
-  packageName: string;
-  addOns: string[];
-  estimatedTotal: number;
-  status: InquiryStatus;
-  submittedAt: string;
-  notes?: string;
-  internalNotes?: string;
-}
-
-export interface Package {
-  id: string;
-  title: string;
-  tagline: string;
-  duration: string;
-  price: number;
-  popular?: boolean;
-  badge: string;
-  features: string[];
-}
-
-export interface AddOn {
-  id: string;
-  title: string;
-  price: number;
-  description: string;
-}
+import type { IconName } from '../components/common/Icons';
 
 export interface Specialty {
   id: string;
   title: string;
-  icon: string;
+  icon: IconName;
   badge: string;
   description: string;
   highlights: string[];
@@ -52,7 +14,6 @@ export interface GalleryItem {
   title: string;
   category: string;
   location: string;
-  attendees: string;
   image: string;
   caption: string;
 }
@@ -70,7 +31,6 @@ export interface CompereProfile {
   languages: string[];
   yearsExperience: string;
   eventsHosted: string;
-  clientSatisfaction: string;
   bio: {
     lead: string;
     paragraphs: string[];
@@ -80,12 +40,6 @@ export interface CompereProfile {
     value: string;
   }>;
   specialties: Specialty[];
-  showreel: {
-    videoUrl: string;
-    title: string;
-    duration: string;
-    highlightsSummary: string;
-  };
   gallery: GalleryItem[];
   faqs: FAQItem[];
 }

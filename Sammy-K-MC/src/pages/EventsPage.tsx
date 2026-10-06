@@ -19,7 +19,7 @@ export const EventsPage: FC = () => {
           {compereProfile.specialties.map((specialty) => (
             <article key={specialty.id} className="feature-card event-card">
               <div className="feature-icon-wrap">
-                <Icon name={specialty.icon as "check"} size={22} color="#e5a93c" />
+                <Icon name={specialty.icon} size={22} color="#e5a93c" />
               </div>
               <h3>{specialty.title}</h3>
               <p>{specialty.description}</p>

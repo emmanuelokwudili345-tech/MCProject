@@ -12,7 +12,7 @@ export const Hero: FC<HeroProps> = ({ onBookClick }) => {
     <section id="hero" className="hero-section">
       <div className="hero-backdrop" />
 
-      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="container hero-container">
         <div className="hero-grid">
           {/* Left Column: Headlines & Call-to-actions */}
           <div className="hero-content">
@@ -46,8 +46,8 @@ export const Hero: FC<HeroProps> = ({ onBookClick }) => {
           <div className="hero-media-wrapper">
             <div className="hero-portrait-card">
               <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85"
-                alt="Sammy K commanding a live summit stage"
+                src="/image-1.jpeg"
+                alt="Sammy K hosting a live event"
                 className="hero-portrait-image"
               />
 
@@ -59,8 +59,8 @@ export const Hero: FC<HeroProps> = ({ onBookClick }) => {
                 <Icon name="award" size={20} />
               </div>
               <div className="hero-floating-text">
-                <strong>50+ Global Stages</strong>
-                <span>99.2% Client Satisfaction</span>
+                <strong>50+ Stages Hosted</strong>
+                <span>Nigeria-based • English & Yoruba</span>
               </div>
             </div>
           </div>

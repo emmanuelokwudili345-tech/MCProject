@@ -33,7 +33,7 @@ export const Navbar: FC<NavbarProps> = ({ onBookClick }) => {
           </div>
         </Link>
 
-        <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+        <nav id="primary-navigation" className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`} aria-label="Primary navigation">
           <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
             About
           </Link>
@@ -59,7 +59,9 @@ export const Navbar: FC<NavbarProps> = ({ onBookClick }) => {
             type="button"
             className="mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="primary-navigation"
           >
             <Icon name={mobileMenuOpen ? 'x' : 'menu'} size={24} />
           </button>

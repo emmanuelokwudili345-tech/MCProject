@@ -32,8 +32,8 @@ export function AboutPage() {
             </div>
             <div className="stats-row">
               <div>
-                <strong>{compereProfile.clientSatisfaction}</strong>
-                <span>Client satisfaction</span>
+                <strong>{compereProfile.languages.length}</strong>
+                <span>Languages spoken</span>
               </div>
             </div>
             <div className="mini-list">
