@@ -38,7 +38,7 @@
   --border-active: var(--gold-primary);
 
   /* Typography Scales */
-  --font-display: 'Syne', -apple-system, sans-serif;
+  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Shadows & Depth */
